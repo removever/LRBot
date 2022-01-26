@@ -1,3 +1,4 @@
+from ast import While
 import pyautogui
 from check_function import *
 
@@ -13,7 +14,7 @@ import threading
 event = threading.Event()
 root = Tk()
 root.geometry("400x300")
-root.title(" AutoBomb by Wara Multi v. By removesver")
+root.title(" LR Bot By removesver")
 
 lb1 = Label(text="เวลาทำงาน (นาที)")
 work_time = Text(root, height=1,
@@ -79,7 +80,9 @@ def run_bot(input_work_time):
             if cp == 'login':
                 login(w, active)
                 time.sleep(5)
-            work_all(w)
+            my_break = False
+            while my_break == False:
+                my_break = work_all(w)
             time.sleep(2)
             time.sleep(1)
             # ทำงาน
